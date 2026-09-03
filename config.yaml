@@ -1,0 +1,27 @@
+# Watchlist tickers to monitor by default
+tickers:
+  - NVDA
+
+# Refresh interval (seconds) when running in live loop mode
+refresh_seconds: 60
+
+# Model routing
+models:
+  cheap: "claude-haiku-4-5-20251001"
+  strong: "claude-sonnet-5"
+  # Signal score (0-100) above which analysis escalates from cheap -> strong model
+  escalation_threshold: 60
+
+# Cost logging
+logging:
+  path: "logs/cost_log.csv"
+
+# Approximate per-million-token pricing (USD) used for cost estimates in the log.
+# Update these if pricing changes.
+pricing:
+  claude-haiku-4-5-20251001:
+    input_per_mtok: 1.00
+    output_per_mtok: 5.00
+  claude-sonnet-5:
+    input_per_mtok: 3.00
+    output_per_mtok: 15.00
